@@ -6,9 +6,21 @@ import be.intecbrussel.services.interfaces.PersonService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class PersonConfiguration {
+
+    private int id =0;
+    @Bean
+    @Scope("prototype")
+    public Person person(){
+        Person person = new Person();
+        person.setId(id);
+        id++;
+        return person;
+
+    }
 
     @Bean
     public PersonDao mockDao() {

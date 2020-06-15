@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface PersonService {
-
+// this does not belong here ;-)
     List<Person> allPersons = new ArrayList<Person>();
 
     public Person getPerson(int id);
